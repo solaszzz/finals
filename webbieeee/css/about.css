@@ -184,8 +184,38 @@ nav{
     margin-bottom:10px;
 }
 
+/* TOGGLE */
+#menu-toggle{
+    display:none;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
 /* RESPONSIVE */
 @media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:80px;
+        right:20px;
+        flex-direction:column;
+        background:rgba(0,0,0,0.95);
+        padding:20px;
+        border-radius:12px;
+    }
+
+    #menu-toggle:checked ~ .nav-links{
+        display:flex;
+    }
 
     .nav-links{
         gap:18px;
@@ -198,10 +228,15 @@ nav{
 
     .about-container{
         text-align:center;
+        flex-direction:column;
     }
 
     .experience-box{
         position:static;
         margin-top:20px;
+    }
+
+    .right-panel img{
+        width:300px;
     }
 }
