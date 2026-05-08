@@ -1,0 +1,257 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,255,255,0.08), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255,0,255,0.08), transparent 25%);
+    z-index:-1;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 8%;
+    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,0.03);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-family:'Orbitron', sans-serif;
+    color:#00ffff;
+    text-shadow:0 0 10px #00ffff;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-links a:hover,
+.active{
+    color:#00ffff;
+    text-shadow:0 0 10px #00ffff;
+}
+
+/* TOGGLE */
+#menu-toggle{
+    display:none;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
+        url("../images/sdga.gif") center/cover no-repeat;
+}
+
+.hero-left{
+    max-width:700px;
+}
+
+.tag{
+    color:#ff00ff;
+    letter-spacing:4px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:85px;
+    font-family:'Orbitron', sans-serif;
+    line-height:1;
+}
+
+.hero h1 span{
+    color:#ff00ff;
+    text-shadow:0 0 15px #ff00ff;
+}
+
+.hero h3{
+    margin-top:20px;
+    font-size:24px;
+    color:#d0d0d0;
+}
+
+.description{
+    margin-top:20px;
+    max-width:500px;
+    line-height:1.8;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 35px;
+    border:2px solid #00ffff;
+    color:#00ffff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#00ffff;
+    color:black;
+    box-shadow:0 0 20px #00ffff;
+}
+
+.small-btn{
+    padding:12px 25px;
+    font-size:14px;
+}
+
+/* ABOUT */
+.about{
+    padding:70px 8%;
+}
+
+.glass-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    padding:40px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    font-family:'Orbitron', sans-serif;
+    margin-bottom:20px;
+    color:#00ffff;
+}
+
+.about-text p{
+    line-height:1.8;
+}
+
+.profile-box img{
+    width:250px;
+    border-radius:20px;
+    border:2px solid #ff00ff;
+    box-shadow:0 0 20px rgba(255,0,255,0.3);
+}
+
+/* PROJECTS */
+.projects{
+    padding:70px 8%;
+}
+
+.projects h2{
+    font-family:'Orbitron', sans-serif;
+    margin-bottom:30px;
+    color:#00ffff;
+}
+
+.project-container{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.project-card{
+    flex:1;
+    min-width:250px;
+    padding:30px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 20px rgba(0,255,255,0.25);
+}
+
+.project-card h3{
+    font-family:'Orbitron', sans-serif;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:80px;
+        right:20px;
+        flex-direction:column;
+        background:rgba(0,0,0,0.95);
+        padding:25px;
+        border-radius:12px;
+    }
+
+    #menu-toggle:checked ~ .nav-links{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero h3{
+        font-size:18px;
+    }
+
+    .glass-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .profile-box img{
+        width:180px;
+    }
+}
