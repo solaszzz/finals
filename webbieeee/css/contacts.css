@@ -8,7 +8,7 @@
 
 body{
   min-height: 100vh;
-  background: #050816;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url("../images/c2.gif") center/cover no-repeat fixed;
   color: white;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
@@ -21,7 +21,7 @@ body{
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(200px);
   z-index: -1;
 }
 
